@@ -62,6 +62,10 @@ class LogsAccumulator implements LogMetricInterface {
                         break;
                     case "json":
                         $match = $match && preg_match('/' . $conditions[0] . '/', $log[$filter]);
+                        if($match) {
+                            $arr = json_decode($log[$filter], true);
+                            $this->by = $arr[$conditions[0]];
+                        }
                         break;
                     case "text":
                     default:
