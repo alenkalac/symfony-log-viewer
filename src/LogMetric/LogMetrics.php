@@ -10,7 +10,7 @@ class LogMetrics
 
     const METRIC_TYPES = [
         self::METRIC_TYPE_COUNTER => LogsCounter::class,
-        self::METRIC_TYPE_ACCUMULATOR => LogsCounter::class
+        self::METRIC_TYPE_ACCUMULATOR => LogsAccumulator::class
     ];
 
     private array $groups;
