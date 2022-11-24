@@ -84,6 +84,7 @@ class LogsAvg implements LogMetricInterface {
 
     public function getResult(): int
     {
+        if($this->count == 0) return $this->result;
         return $this->result/$this->count;
     }
 
