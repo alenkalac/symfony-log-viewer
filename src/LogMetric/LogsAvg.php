@@ -42,7 +42,8 @@ class LogsAvg implements LogMetricInterface {
         $this->result = 0;
         foreach ($logs as $log) {
             if ($this->matchFilters($log)) {
-                $this->count++;
+                if($this->by > 0)
+                    $this->count++;
                 $this->result += $this->by;
             }
         }
