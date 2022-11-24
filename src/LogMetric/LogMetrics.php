@@ -7,10 +7,12 @@ class LogMetrics
     /* Available metric types */
     const METRIC_TYPE_COUNTER = 'counter';
     const METRIC_TYPE_ACCUMULATOR = 'accumulator';
+    const METRIC_TYPE_AVG = 'average';
 
     const METRIC_TYPES = [
         self::METRIC_TYPE_COUNTER => LogsCounter::class,
-        self::METRIC_TYPE_ACCUMULATOR => LogsAccumulator::class
+        self::METRIC_TYPE_ACCUMULATOR => LogsAccumulator::class,
+        self::METRIC_TYPE_AVG => LogsAvg::class
     ];
 
     private array $groups;

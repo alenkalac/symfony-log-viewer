@@ -12,7 +12,6 @@ class LogsCounter implements LogMetricInterface
     private string $icon = 'fa-info';
 
     private int $result = 0;
-    private int $by = 0;
 
     /**
      * LogCounter constructor.

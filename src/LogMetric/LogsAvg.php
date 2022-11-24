@@ -4,7 +4,7 @@ namespace Kira0269\LogViewerBundle\LogMetric;
 
 use Exception;
 
-class LogsAccumulator implements LogMetricInterface {
+class LogsAvg implements LogMetricInterface {
 
     private string $title;
     private array $filters;
@@ -14,6 +14,7 @@ class LogsAccumulator implements LogMetricInterface {
     private string $icon = 'fa-info';
 
     private int $by = 0;
+    private int $count = 0;
     private int $result = 0;
 
     /**
@@ -41,6 +42,7 @@ class LogsAccumulator implements LogMetricInterface {
         $this->result = 0;
         foreach ($logs as $log) {
             if ($this->matchFilters($log)) {
+                $this->count++;
                 $this->result += $this->by;
             }
         }
@@ -82,7 +84,7 @@ class LogsAccumulator implements LogMetricInterface {
 
     public function getResult(): int
     {
-        return $this->result;
+        return $this->result/$this->count;
     }
 
     public function getTitle(): string
