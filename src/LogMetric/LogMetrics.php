@@ -6,9 +6,11 @@ class LogMetrics
 {
     /* Available metric types */
     const METRIC_TYPE_COUNTER = 'counter';
+    const METRIC_TYPE_ACCUMULATOR = 'accumulator';
 
     const METRIC_TYPES = [
-        self::METRIC_TYPE_COUNTER => LogsCounter::class
+        self::METRIC_TYPE_COUNTER => LogsCounter::class,
+        self::METRIC_TYPE_ACCUMULATOR => LogsCounter::class
     ];
 
     private array $groups;
