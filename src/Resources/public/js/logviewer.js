@@ -8,7 +8,7 @@ $(document).ready( function () {
     const jsonFormat = (value) => {
         let formattedValue = JSON.parse(value);
         if (typeof formattedValue === 'object' && !Array.isArray(formattedValue)) {
-            return '<pre>'+JSON.stringify(formattedValue)+'</pre>';
+            return '<pre>'+JSON.stringify(formattedValue, null, 2)+'</pre>';
         }
         return '<pre>'+formattedValue+'</pre>';
     }
